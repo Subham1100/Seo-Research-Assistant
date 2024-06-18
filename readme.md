@@ -1,5 +1,8 @@
 <h1>SEO Research Assistant </h1>
 
+![Blank diagram](https://github.com/Subham1100/Seo-Research-Assistant/assets/100254554/82282856-426b-4686-a89b-29b43220c87e)
+
+
 ## Features
 The program prompts the user to input a website URL and 
 keywords of their choosing. Using the 'requests' module and 
