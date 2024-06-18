@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SEO Analysis Results</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        background-color: #f9f9f9;
+        color: #333;
+      }
+      h1 {
+        color: #0056b3;
+      }
+      .container {
+        max-width: 800px;
+        margin: auto;
+        background: #fff;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      .result-section {
+        margin-bottom: 20px;
+      }
+      .result-section h2 {
+        color: #333;
+        border-bottom: 2px solid #0056b3;
+        padding-bottom: 5px;
+      }
+      .result-section p {
+        margin: 10px 0;
+      }
+      .highlight {
+        background-color: #e1f5fe;
+        padding: 5px;
+        border-radius: 3px;
+      }
+      .footer {
+        margin-top: 30px;
+        text-align: center;
+        font-size: 0.9em;
+        color: #777;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>SEO Analysis Results</h1>
+
+      <div class="result-section">
+        <h2>Submitted Information</h2>
+        <p><strong>Marketer Name:</strong> {{ marketer_name }}</p>
+        <p><strong>Description:</strong> {{ description }}</p>
+        <p>
+          <strong>URL:</strong>
+          <a href="{{ url }}" target="_blank">{{ url }}</a>
+        </p>
+        <p><strong>Open To:</strong> {{ open_to }}</p>
+        <p><strong>Field Keywords:</strong> {{ field }}</p>
+        <p><strong>Desired DR:</strong> {{ dr }}</p>
+      </div>
+
+      <div class="result-section">
+        <h2>SEO Analysis</h2>
+        <div class="result-section">
+          <h2>Broken Links</h2>
+          {% if broken_links %}
+          <ul>
+            {% for link in broken_links %}
+            <li>{{ link }}</li>
+            {% endfor %}
+          </ul>
+          {% else %}
+          <p>No broken links found.</p>
+          {% endif %}
+        </div>
+        <div class="result-section">
+          <h2>Matched Marketers</h2>
+          {% if matched_marketers %}
+          <ol>
+            {% for marketer, similarity_score in matched_marketers %}
+            <li>{{ marketer }} (Similarity Score: {{ similarity_score }})</li>
+            {% endfor %}
+          </ol>
+          {% else %}
+          <p>No marketers matched based on description and field.</p>
+          {% endif %}
+        </div>
+      </div>
+
+      <div class="footer"></div>
+    </div>
+  </body>
+</html>

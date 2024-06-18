@@ -1,0 +1,5 @@
+/venv/
+/api_config.py
+/backlinks_api_response.json
+/build/
+/main.spec
